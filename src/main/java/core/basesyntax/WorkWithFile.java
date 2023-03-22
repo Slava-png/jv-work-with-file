@@ -1,6 +1,9 @@
 package core.basesyntax;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Files;
 
 public class WorkWithFile {
@@ -36,11 +39,10 @@ public class WorkWithFile {
             throw new RuntimeException("There is no such file as " + fromFileName, e);
         }
 
-        return "supply," + supply +
-                System.lineSeparator() +
-                "buy," + buy +
-                System.lineSeparator() +
-                "result," + (supply - buy);
+        return "supply," + supply
+                + System.lineSeparator() + "buy,"
+                + buy + System.lineSeparator()
+                + "result," + (supply - buy);
     }
 
     public static void writeData(String toFileName, String report) {
